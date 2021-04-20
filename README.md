@@ -23,7 +23,7 @@ As of now outside commits to this repository are not allowed
 
 3HTTPs in a pod: @pour-theoil, @EthanMathis and @HPreast 
 
-###Sample JSON data
+### Sample JSON data
 `{
   "users": [
     {
