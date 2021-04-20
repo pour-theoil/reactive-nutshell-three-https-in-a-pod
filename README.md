@@ -1,77 +1,91 @@
-# Reactive Nutshell: The Information Dashboard
+# Nutshell
 
-## Setup: Follow these steps exactly
+Single page social site that features an article news list, public message board, local events, and task lists. 
 
-1. Clone this repository
-1. `cd` into the directory it creates
-1. In the `api` directory, create a copy of the `database.json.example` and remove the `.example` extension.
-1. Run `json-server -p 8088 -w database.json` from the `api` directory.
-1. Run `npm install` and wait for all dependencies to be installed.
-1. Run `npm start` to verify that installation was successful.
+## Project Goals
 
-> **Note:** Your `database.json` file is already in the `.gitignore` file for this project, so it will never be added to the repo or pushed to Github.
+Built using React; this app focused on state changes, useEffect as well as continuing to reenforce knowledge about apis. MVP was to have CRUD achieved for all of the above links.
 
-## What is Reactive Nutshell?
+### Getting Started
 
-Nutshell is a new product offering that you have been tasked with building. It's an app for people to use to organize their daily tasks, events, news article, friends, and chat messages.
+Start by logging into the page with your email address if you are an existing user. You may register for the site as well an store data on your local JSON server. As you navigate the site feel free to add intersting articles, tasks to be completed, local events, or send messages on the public message board. Users may add friends by searching the directory or adding a new friend from the 
 
-You will be using the React library to build out this application.
+### Getting started with the project
 
-To start you off, here's an example of what some of the resources in your API should look like once it's populated with some data from your application.
+To start, clone or copy the repository and place it in the root of your web directory. Aftering cloning The project requires json-server to be running in order to interact with the local API. 'json-server --watch db.json --port 8088'.
 
-### Users
 
-```json
-{ "id": 1, "name": "Steve Brownlee", "email": "me@me.com" }
-```
+### How to help with the project
 
-### Friends
+As of now outside commits to this repository are not allowed
 
-```json
-{ "id": 1, "userId": 1, "currentUserId": 3 }
-```
+### This project is maintained by
 
-### News Articles
+3HTTPs in a pod: @pour-theoil, @EthanMathis and @HPreast 
 
-```json
-{
-    "id": 1,
-    "userId": 2,
-    "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
-    "title": "Wormholes Allow Information to Escape Black Holes",
-    "synopsis": "Check out this recent discovery about workholes",
-    "timestamp": "2021-02-11T15:24"
+###Sample JSON data
+`{
+  "users": [
+    {
+      "id": 0,
+      "name": "null",
+      "email": "null"
+    },
+    {
+      "id": 1,
+      "name": "Steve Brownlee",
+      "email": "me@me.com"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": 3,
+      "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
+      "title": "Wormholes Allow Information to Escape Black Holes",
+      "synopsis": "Check out this recent discovery about workholes",
+      "timestamp": 1618411096199
+    }
+  ],
+  "messages": [
+    {
+      "userId": 2,
+      "friendId": 0,
+      "message": "from me",
+      "id": 83
+    }
+  ],
+  "events": [
+    {
+      "userId": 3,
+      "message": "Party like its 1993",
+      "eventdate": "2021-04-14T10:49",
+      "location": "Nashville, TN",
+      "title": "Time Testing",
+      "id": 14
+    }
+  ],
+  "tasks": [
+    {
+      "id": 0,
+      "userId": 1,
+      "title": "Random Task",
+      "task": "Loads of work to be done",
+      "completedby": "2021-02-11T15:24",
+      "isComplete": true
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "userId": 1,
+      "currentUserId": 3
+    }
+    {
+      "id": 0,
+      "userId": 1,
+      "currentUserId": 3
+    }
+  ]
 }
-```
-
-## Professional Requirements
-
-1. All teammates must use React and JSON-server. 
-1. Each module should have a comment at the top with the following info: author(s) and purpose of module
-1. The README for your project should include instructions on how another person can download and run the application
-1. An ERD showing the database relationships. A screenshot/image should be included on your README.
-
-## A Note About Authentication
-
-We want you to know that the login and registration code we have given you is fake, completely insecure, and would never be implemented in a professional application. It is a simulation authentication using very simplistic tools, because authentication is not a learning objective of students at NSS.
-
-You will be using [session storage](https://javascript.info/localstorage#sessionstorage) to keep track of which user has logged into Nutshell. You need to read the code in the **`Login.js`** and **`Register.js`** components so that you see what is going on, but you do not need to change it.
-
-## Keep in mind some tips for a good usable app
-1. Use acceptable conventions
-   * Logo positioned at top left
-   * Navigation across the top or down the left side
-2. Visual hierarchy
-   * Most important information is the most prominent
-3. Break pages up into defined sections
-   * Logically related content should be related visually
-4. That which is clickable should be obviously clickable.
-5. Eliminate distractions
-   * Use only two typefaces
-   * Limit color pallet (3 colors with black and white)
-   * Use a grid
-6. Support scanning (users don't read)
-   * Use plenty of headings
-   * Short paragraphs
-   * Bulleted lists
-7. Strive for consistency.
+`
